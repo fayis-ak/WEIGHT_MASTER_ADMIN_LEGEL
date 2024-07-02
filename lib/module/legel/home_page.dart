@@ -169,7 +169,7 @@ class _HomePageLegelState extends State<HomePageLegel> {
     "Home",
     "Notifications",
     "User Product",
-    // "Rented Products",
+    "Rented Products",
     "Warranty",
     "Service",
     "Our Center"

@@ -10,7 +10,8 @@ class AddProductPage extends StatelessWidget {
   var productRateController = TextEditingController();
   var productDiscription = TextEditingController();
   String selectedItem = "";
-  String setSelectedType = "";
+  String producttype = "";
+
   final _formKey = GlobalKey<FormState>();
   List<String> items = ["Buy", "Rent"],
       types = [
@@ -213,7 +214,7 @@ class AddProductPage extends StatelessWidget {
                                 name: productnameController.text,
                                 rate: productRateController.text,
                                 type: selectedItem,
-                                productype: selectedItem,
+                                productype: producttype,
                               ),
                             )
                                 .then((value) {
