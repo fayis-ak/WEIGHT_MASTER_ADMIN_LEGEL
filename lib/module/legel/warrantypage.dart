@@ -194,24 +194,31 @@ class _WarrentyPageLegelState extends State<WarrentyPageLegel> {
                                 SizedBox(
                                   height: 50,
                                 ),
-                                Container(
-                                  width: 90,
-                                  height: 80,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          service.warentymap[index]['buymodel']
-                                              ['productModel']['image']),
+                                if (service.warentymap[index]['status'] ==
+                                    'Accept')
+                                  Container(
+                                    width: 90,
+                                    height: 80,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(service
+                                                .warentymap[index]['buymodel']
+                                            ['productModel']['image']),
+                                      ),
                                     ),
                                   ),
-                                ),
+                                Text('Note Accept Admin'),
                                 SizedBox(
                                   height: 20,
                                 ),
-                                Text(
-                                    'PRODUCT NAME:${service.warentymap[index]['buymodel']['productModel']['name']}'),
-                                Text(
-                                    'WARRANTY DATE:${service.warentymap[index]['buymodel']['productModel']['warrentyDate']}'),
+                                if (service.warentymap[index]['status'] ==
+                                    'Accept')
+                                  Text(
+                                      'PRODUCT NAME:${service.warentymap[index]['buymodel']['productModel']['name']}'),
+                                if (service.warentymap[index]['status'] ==
+                                    'Accept')
+                                  Text(
+                                      'WARRANTY DATE:${service.warentymap[index]['buymodel']['productModel']['warrentyDate']}'),
                               ],
                             ),
                           ),

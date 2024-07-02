@@ -129,6 +129,39 @@ class ServicePage extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Consumer<DbService>(
+                                    builder: (context, service, child) {
+                                      return GestureDetector(
+                                        onTap: () {
+                                          final docid =
+                                              data[index]['serviceId'];
+
+                                          service.updateService(docid);
+                                        },
+                                        child: Container(
+                                          alignment: Alignment.center,
+                                          width: 80,
+                                          height: 50,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: Colors.green,
+                                          ),
+                                          child: Text(data[index]['status']),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                ],
+                              ),
+                            )
                           ],
                         ),
                       );

@@ -198,22 +198,31 @@ class _ServicePageLegelState extends State<ServicePageLegel> {
                                   SizedBox(
                                     height: 50,
                                   ),
-                                  Container(
-                                    width: 90,
-                                    height: 80,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: NetworkImage(service
-                                                        .servicemap[index]
-                                                    ['buymodel']['productModel']
-                                                ['image']))),
-                                  ),
-                                  Text(
-                                      'PRODUCT NAME :${service.servicemap[index]['buymodel']['productModel']['name']}'),
-                                  Text(
-                                      'USER NAME :${service.servicemap[index]['name']}'),
-                                  Text(
-                                      'COMPLAINT ${service.servicemap[index]['compalaint']}')
+                                  if (service.servicemap[index]['status'] ==
+                                      'Accept')
+                                    Container(
+                                      width: 90,
+                                      height: 80,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: NetworkImage(service
+                                                          .servicemap[index]
+                                                      ['buymodel']
+                                                  ['productModel']['image']))),
+                                    ),
+                                  Text('NOTE ACCEPT ADMIN'),
+                                  if (service.servicemap[index]['status'] ==
+                                      'Accept')
+                                    Text(
+                                        'PRODUCT NAME :${service.servicemap[index]['buymodel']['productModel']['name']}'),
+                                  if (service.servicemap[index]['status'] ==
+                                      'Accept')
+                                    Text(
+                                        'USER NAME :${service.servicemap[index]['name']}'),
+                                  if (service.servicemap[index]['status'] ==
+                                      'Accept')
+                                    Text(
+                                        'COMPLAINT ${service.servicemap[index]['compalaint']}')
                                 ],
                               ),
                             ),

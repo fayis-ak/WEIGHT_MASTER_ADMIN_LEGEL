@@ -10,17 +10,20 @@ class WarrentyClaimModel {
   BuyProductModel buymodel;
   String date;
   String additionalComment;
+  String status;
 
-  WarrentyClaimModel(
-      {required this.additionalComment,
-      required this.email,
-      required this.date,
-      required this.buymodel,
-      required this.name,
-      required this.number,
-      required this.productid,
-      required this.uid,
-      this.warrentyId});
+  WarrentyClaimModel({
+    required this.additionalComment,
+    required this.email,
+    required this.date,
+    required this.buymodel,
+    required this.name,
+    required this.number,
+    required this.productid,
+    required this.uid,
+    this.warrentyId,
+    required this.status,
+  });
   Map<String, dynamic> toJson(id, buyid) => {
         "productid": productid,
         "uid": uid,
@@ -30,7 +33,8 @@ class WarrentyClaimModel {
         "email": email,
         "buymodel": buymodel.toJson(id),
         "date": date,
-        "additionalComment": additionalComment
+        "additionalComment": additionalComment,
+        'status': status,
       };
 
   factory WarrentyClaimModel.fromjson(Map<String, dynamic> json) {
@@ -47,6 +51,7 @@ class WarrentyClaimModel {
       productid: json["productid"],
       uid: json["uid"],
       warrentyId: json["warrentyId"],
+      status: json['status'],
     );
   }
 }

@@ -203,4 +203,18 @@ class DbService with ChangeNotifier {
       return e.data();
     }).toList();
   }
+
+  Future updateStatus(docid) async {
+    FirebaseFirestore.instance.collection('Warrenty Claim').doc(docid).update({
+      'status': 'Accept',
+    });
+    notifyListeners();
+  }
+
+   Future updateService(docid) async {
+    FirebaseFirestore.instance.collection('Service Appoinments').doc(docid).update({
+      'status': 'Accept',
+    });
+    notifyListeners();
+  }
 }
