@@ -166,7 +166,7 @@ class AddProductPage extends StatelessWidget {
                               ))
                           .toList(),
                       onChanged: (setSelectedType) {
-                        selectedItem = setSelectedType!;
+                        producttype = setSelectedType!;
                       }),
                 ),
                 const SizedBox(

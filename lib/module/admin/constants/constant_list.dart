@@ -24,14 +24,16 @@ class ConstantList extends StatelessWidget {
                   child: CircularProgressIndicator(),
                 );
               }
-              List<BuyProductModel> data = [];
+              List<Map<String, dynamic>> data = [];
               if (isOrder == true) {
                 data = service.listOfBuy
-                    .where((element) => element.productModel.type == "Buy")
+                    .where(
+                        (element) => element['productModel']['type'] == "Buy")
                     .toList();
               } else {
                 data = service.listOfBuy
-                    .where((element) => element.productModel.type == "Rent")
+                    .where(
+                        (element) => element['productModel']['type'] == "Rent")
                     .toList();
               }
 
@@ -50,21 +52,22 @@ class ConstantList extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.network(
-                                    data[index].productModel.image),
+                                    data[index]['productModel']['image']),
                               ),
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      data[index].productModel.name,
+                                      data[index]['productModel']['name'],
                                       style: TextStyle(fontSize: 22),
                                     ),
-                                    Text(data[index].productModel.discription),
+                                    Text(data[index]['productModel']
+                                        ['discription']),
                                   ],
                                 ),
                               ),
-                              Text(data[index].boughtDate),
+                              Text(data[index]['productModel']['name']),
                             ],
                           ),
                         );

@@ -53,19 +53,19 @@ class WarrentyPage extends StatelessWidget {
                                   height: 10,
                                 ),
                                 Text(
-                                  "Name: ${data[index].name}",
+                                  "Name: ${data[index]['name']}",
                                   style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600),
                                 ),
                                 Text(
-                                  "Email: ${data[index].email}",
+                                  "Email: ${data[index]['email']}",
                                   style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600),
                                 ),
                                 Text(
-                                  "Contact Number: ${data[index].number}",
+                                  "Contact Number: ${data[index]['number']}",
                                   style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600),
@@ -88,13 +88,13 @@ class WarrentyPage extends StatelessWidget {
 
                                 // Text(data[index].),
                                 Text(
-                                  "Complaint: ${data[index].additionalComment}",
+                                  "Complaint: ${data[index]['additionalComment']}",
                                   style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600),
                                 ),
                                 Text(
-                                  "Date: ${data[index].date}",
+                                  "Date: ${data[index]['date']}",
                                   style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600),
@@ -116,13 +116,13 @@ class WarrentyPage extends StatelessWidget {
                                 ),
                                 // Text(data[index].),
                                 Text(
-                                  "Product Name: ${data[index].buymodel.productModel.name}",
+                                  "Product Name: ${data[index]['buymodel']['productModel']['name']}",
                                   style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600),
                                 ),
                                 Text(
-                                  "Siscription: ${data[index].buymodel.productModel.discription}",
+                                  "discription: ${data[index]['buymodel']['productModel']['discription']}",
                                   style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600),

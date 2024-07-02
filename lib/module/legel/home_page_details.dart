@@ -142,63 +142,67 @@ class One extends StatelessWidget {
                 );
               }
               final data = snapshot.data!.docs;
-              return Column(
-                children: [
-                  Expanded(
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3, crossAxisSpacing: 30),
-                        itemCount: data.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: height / 3,
-                                  width: width / 3,
-                                  decoration: BoxDecoration(
-                                      color: Colors.blueGrey,
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: NetworkImage(
-                                              data[index]["image"]))),
-                                ),
-                                Text(
-                                  data[index]["name"],
-                                  style: const TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w600,
+              return data.isEmpty
+                  ? Center(
+                      child: Text('NO PRODUCT'),
+                    )
+                  : Column(
+                      children: [
+                        Expanded(
+                          child: GridView.builder(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 3, crossAxisSpacing: 30),
+                              itemCount: data.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: height / 3,
+                                        width: width / 3,
+                                        decoration: BoxDecoration(
+                                            color: Colors.blueGrey,
+                                            image: DecorationImage(
+                                                fit: BoxFit.fill,
+                                                image: NetworkImage(
+                                                    data[index]["image"]))),
+                                      ),
+                                      Text(
+                                        data[index]["name"],
+                                        style: const TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "${data[index]["discription"]} (${data[index]["type"]})",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            "₹ ${data[index]["rate"].toString()}",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
                                   ),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "${data[index]["discription"]} (${data[index]["type"]})",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Text(
-                                      "₹ ${data[index]["rate"].toString()}",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
-                ],
-              );
+                                );
+                              }),
+                        ),
+                      ],
+                    );
             });
       }),
     );
@@ -227,63 +231,67 @@ class Two extends StatelessWidget {
                 );
               }
               final data = snapshot.data!.docs;
-              return Column(
-                children: [
-                  Expanded(
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3, crossAxisSpacing: 30),
-                        itemCount: data.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: height / 3,
-                                  width: width / 3,
-                                  decoration: BoxDecoration(
-                                      color: Colors.blueGrey,
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: NetworkImage(
-                                              data[index]["image"]))),
-                                ),
-                                Text(
-                                  data[index]["name"],
-                                  style: const TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w600,
+              return data.isEmpty
+                  ? Center(
+                      child: Text('NO PRODUCT'),
+                    )
+                  : Column(
+                      children: [
+                        Expanded(
+                          child: GridView.builder(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 3, crossAxisSpacing: 30),
+                              itemCount: data.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: height / 3,
+                                        width: width / 3,
+                                        decoration: BoxDecoration(
+                                            color: Colors.blueGrey,
+                                            image: DecorationImage(
+                                                fit: BoxFit.fill,
+                                                image: NetworkImage(
+                                                    data[index]["image"]))),
+                                      ),
+                                      Text(
+                                        data[index]["name"],
+                                        style: const TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "${data[index]["discription"]} (${data[index]["type"]})",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            "₹ ${data[index]["rate"].toString()}",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
                                   ),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "${data[index]["discription"]} (${data[index]["type"]})",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Text(
-                                      "₹ ${data[index]["rate"].toString()}",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
-                ],
-              );
+                                );
+                              }),
+                        ),
+                      ],
+                    );
             });
       }),
     );
@@ -312,63 +320,67 @@ class THree extends StatelessWidget {
                 );
               }
               final data = snapshot.data!.docs;
-              return Column(
-                children: [
-                  Expanded(
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3, crossAxisSpacing: 30),
-                        itemCount: data.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: height / 3,
-                                  width: width / 3,
-                                  decoration: BoxDecoration(
-                                      color: Colors.blueGrey,
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: NetworkImage(
-                                              data[index]["image"]))),
-                                ),
-                                Text(
-                                  data[index]["name"],
-                                  style: const TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w600,
+              return data.isEmpty
+                  ? Center(
+                      child: Text('NO PRODUCT'),
+                    )
+                  : Column(
+                      children: [
+                        Expanded(
+                          child: GridView.builder(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 3, crossAxisSpacing: 30),
+                              itemCount: data.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: height / 3,
+                                        width: width / 3,
+                                        decoration: BoxDecoration(
+                                            color: Colors.blueGrey,
+                                            image: DecorationImage(
+                                                fit: BoxFit.fill,
+                                                image: NetworkImage(
+                                                    data[index]["image"]))),
+                                      ),
+                                      Text(
+                                        data[index]["name"],
+                                        style: const TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "${data[index]["discription"]} (${data[index]["type"]})",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            "₹ ${data[index]["rate"].toString()}",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
                                   ),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "${data[index]["discription"]} (${data[index]["type"]})",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Text(
-                                      "₹ ${data[index]["rate"].toString()}",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
-                ],
-              );
+                                );
+                              }),
+                        ),
+                      ],
+                    );
             });
       }),
     );
@@ -397,63 +409,67 @@ class Four extends StatelessWidget {
                 );
               }
               final data = snapshot.data!.docs;
-              return Column(
-                children: [
-                  Expanded(
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3, crossAxisSpacing: 30),
-                        itemCount: data.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: height / 3,
-                                  width: width / 3,
-                                  decoration: BoxDecoration(
-                                      color: Colors.blueGrey,
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: NetworkImage(
-                                              data[index]["image"]))),
-                                ),
-                                Text(
-                                  data[index]["name"],
-                                  style: const TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w600,
+              return data.isEmpty
+                  ? Center(
+                      child: Text('NO PRODUCT'),
+                    )
+                  : Column(
+                      children: [
+                        Expanded(
+                          child: GridView.builder(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 3, crossAxisSpacing: 30),
+                              itemCount: data.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: height / 3,
+                                        width: width / 3,
+                                        decoration: BoxDecoration(
+                                            color: Colors.blueGrey,
+                                            image: DecorationImage(
+                                                fit: BoxFit.fill,
+                                                image: NetworkImage(
+                                                    data[index]["image"]))),
+                                      ),
+                                      Text(
+                                        data[index]["name"],
+                                        style: const TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "${data[index]["discription"]} (${data[index]["type"]})",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            "₹ ${data[index]["rate"].toString()}",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
                                   ),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "${data[index]["discription"]} (${data[index]["type"]})",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Text(
-                                      "₹ ${data[index]["rate"].toString()}",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
-                ],
-              );
+                                );
+                              }),
+                        ),
+                      ],
+                    );
             });
       }),
     );
@@ -462,6 +478,95 @@ class Four extends StatelessWidget {
 
 class Five extends StatelessWidget {
   const Five({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    return SizedBox(
+      // width: MediaQuery.of(context).size.width / 1.3,
+      child: Consumer<DbService>(builder: (context, service, child) {
+        return StreamBuilder<QuerySnapshot>(
+            stream: FirebaseFirestore.instance
+                .collection("Product Data")
+                .where('producttype', isEqualTo: 'Counting')
+                .snapshots(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              final data = snapshot.data!.docs;
+              return data.isEmpty
+                  ? Center(
+                      child: Text('NO PRODUCT'),
+                    )
+                  : Column(
+                      children: [
+                        Expanded(
+                          child: GridView.builder(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 3, crossAxisSpacing: 30),
+                              itemCount: data.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: height / 3,
+                                        width: width / 3,
+                                        decoration: BoxDecoration(
+                                            color: Colors.blueGrey,
+                                            image: DecorationImage(
+                                                fit: BoxFit.fill,
+                                                image: NetworkImage(
+                                                    data[index]["image"]))),
+                                      ),
+                                      Text(
+                                        data[index]["name"],
+                                        style: const TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "${data[index]["discription"]} (${data[index]["type"]})",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            "₹ ${data[index]["rate"].toString()}",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                );
+                              }),
+                        ),
+                      ],
+                    );
+            });
+      }),
+    );
+  }
+}
+
+class Six extends StatelessWidget {
+  const Six({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -482,148 +587,67 @@ class Five extends StatelessWidget {
                 );
               }
               final data = snapshot.data!.docs;
-              return Column(
-                children: [
-                  Expanded(
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3, crossAxisSpacing: 30),
-                        itemCount: data.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: height / 3,
-                                  width: width / 3,
-                                  decoration: BoxDecoration(
-                                      color: Colors.blueGrey,
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: NetworkImage(
-                                              data[index]["image"]))),
-                                ),
-                                Text(
-                                  data[index]["name"],
-                                  style: const TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w600,
+              return data.isEmpty
+                  ? Center(
+                      child: Text('NO PRODUCT'),
+                    )
+                  : Column(
+                      children: [
+                        Expanded(
+                          child: GridView.builder(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 3, crossAxisSpacing: 30),
+                              itemCount: data.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: height / 3,
+                                        width: width / 3,
+                                        decoration: BoxDecoration(
+                                            color: Colors.blueGrey,
+                                            image: DecorationImage(
+                                                fit: BoxFit.fill,
+                                                image: NetworkImage(
+                                                    data[index]["image"]))),
+                                      ),
+                                      Text(
+                                        data[index]["name"],
+                                        style: const TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "${data[index]["discription"]} (${data[index]["type"]})",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            "₹ ${data[index]["rate"].toString()}",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
                                   ),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "${data[index]["discription"]} (${data[index]["type"]})",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Text(
-                                      "₹ ${data[index]["rate"].toString()}",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
-                ],
-              );
-            });
-      }),
-    );
-  }
-}
-
-class Six extends StatelessWidget {
-  const Six({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    return SizedBox(
-      // width: MediaQuery.of(context).size.width / 1.3,
-      child: Consumer<DbService>(builder: (context, service, child) {
-        return StreamBuilder<QuerySnapshot>(
-            stream: FirebaseFirestore.instance
-                .collection("Product Data")
-                .where('producttype', isEqualTo: 'Industrial')
-                .snapshots(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-              final data = snapshot.data!.docs;
-              return Column(
-                children: [
-                  Expanded(
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3, crossAxisSpacing: 30),
-                        itemCount: data.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: height / 3,
-                                  width: width / 3,
-                                  decoration: BoxDecoration(
-                                      color: Colors.blueGrey,
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: NetworkImage(
-                                              data[index]["image"]))),
-                                ),
-                                Text(
-                                  data[index]["name"],
-                                  style: const TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "${data[index]["discription"]} (${data[index]["type"]})",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Text(
-                                      "₹ ${data[index]["rate"].toString()}",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
-                ],
-              );
+                                );
+                              }),
+                        ),
+                      ],
+                    );
             });
       }),
     );
@@ -652,63 +676,67 @@ class Seven extends StatelessWidget {
                 );
               }
               final data = snapshot.data!.docs;
-              return Column(
-                children: [
-                  Expanded(
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3, crossAxisSpacing: 30),
-                        itemCount: data.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: height / 3,
-                                  width: width / 3,
-                                  decoration: BoxDecoration(
-                                      color: Colors.blueGrey,
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: NetworkImage(
-                                              data[index]["image"]))),
-                                ),
-                                Text(
-                                  data[index]["name"],
-                                  style: const TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w600,
+              return data.isEmpty
+                  ? Center(
+                      child: Text('NO PRODUCT'),
+                    )
+                  : Column(
+                      children: [
+                        Expanded(
+                          child: GridView.builder(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 3, crossAxisSpacing: 30),
+                              itemCount: data.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: height / 3,
+                                        width: width / 3,
+                                        decoration: BoxDecoration(
+                                            color: Colors.blueGrey,
+                                            image: DecorationImage(
+                                                fit: BoxFit.fill,
+                                                image: NetworkImage(
+                                                    data[index]["image"]))),
+                                      ),
+                                      Text(
+                                        data[index]["name"],
+                                        style: const TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "${data[index]["discription"]} (${data[index]["type"]})",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            "₹ ${data[index]["rate"].toString()}",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
                                   ),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "${data[index]["discription"]} (${data[index]["type"]})",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Text(
-                                      "₹ ${data[index]["rate"].toString()}",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
-                ],
-              );
+                                );
+                              }),
+                        ),
+                      ],
+                    );
             });
       }),
     );
@@ -737,63 +765,67 @@ class Eight extends StatelessWidget {
                 );
               }
               final data = snapshot.data!.docs;
-              return Column(
-                children: [
-                  Expanded(
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3, crossAxisSpacing: 30),
-                        itemCount: data.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: height / 3,
-                                  width: width / 3,
-                                  decoration: BoxDecoration(
-                                      color: Colors.blueGrey,
-                                      image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: NetworkImage(
-                                              data[index]["image"]))),
-                                ),
-                                Text(
-                                  data[index]["name"],
-                                  style: const TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w600,
+              return data.isEmpty
+                  ? Center(
+                      child: Text('NO PRODUCT'),
+                    )
+                  : Column(
+                      children: [
+                        Expanded(
+                          child: GridView.builder(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 3, crossAxisSpacing: 30),
+                              itemCount: data.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: height / 3,
+                                        width: width / 3,
+                                        decoration: BoxDecoration(
+                                            color: Colors.blueGrey,
+                                            image: DecorationImage(
+                                                fit: BoxFit.fill,
+                                                image: NetworkImage(
+                                                    data[index]["image"]))),
+                                      ),
+                                      Text(
+                                        data[index]["name"],
+                                        style: const TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            "${data[index]["discription"]} (${data[index]["type"]})",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            "₹ ${data[index]["rate"].toString()}",
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
                                   ),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "${data[index]["discription"]} (${data[index]["type"]})",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Text(
-                                      "₹ ${data[index]["rate"].toString()}",
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          );
-                        }),
-                  ),
-                ],
-              );
+                                );
+                              }),
+                        ),
+                      ],
+                    );
             });
       }),
     );
